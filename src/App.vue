@@ -5,11 +5,30 @@ import { RouterLink, RouterView } from "vue-router";
 <template>
   <v-app>
     <v-app-bar flat>
-      <v-app-bar-title>
-        <v-icon icon="mdi-circle-slice-6" />
-
-        Essentials Preset
-      </v-app-bar-title>
+      <RouterLink to="/" custom v-slot="{ navigate }">
+        <v-btn
+          class="mx-4 white--text"
+          @click="navigate"
+          role="link"
+          elevation="2"
+          x-large
+          color="blue darken-1"
+        >
+          CSV parser
+        </v-btn>
+      </RouterLink>
+      <RouterLink to="/visualisation" custom v-slot="{ navigate }">
+        <v-btn
+          class="mx-4 white--text"
+          @click="navigate"
+          role="link"
+          elevation="2"
+          x-large
+          color="blue darken-1"
+        >
+          Visualisation setup
+        </v-btn>
+      </RouterLink>
     </v-app-bar>
     <v-main>
       <RouterView />
@@ -18,4 +37,7 @@ import { RouterLink, RouterView } from "vue-router";
 </template>
 
 <style scoped>
+.navigation-link {
+  font-size: 2em;
+}
 </style>
